@@ -1,0 +1,18 @@
+﻿
+@{
+    //ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html ng-app="myapp">
+<head style="margin-top:50px">
+    <title>Angular Setup</title>
+    <script type="text/javascript" src="~/Scripts/Lib/angular.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Contents/Index.js"></script>
+</head>
+<body ng-controller="MainController">
+    @*calling  function*@
+    <p>{{sayHello('Siri')}}</p>
+    <p>{{message}}</p>
+</body>
+
+</html>

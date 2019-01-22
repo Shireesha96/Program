@@ -1,0 +1,61 @@
+﻿
+@{
+    //ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html ng-app="myapp">
+<head style="margin-top:50px">
+    <title>Angular Setup</title>
+    <script type="text/javascript" src="~/Scripts/Lib/angular.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Contents/Index.js"></script>
+</head>
+
+<body style="margin-top:50px" > 
+    <div ng-controller="secController">
+        <p>
+            <input type="text" ng-model="itemIndex" />
+            <input type="button" value="GetItem" ng-click="getItem()" />
+        </p>
+
+        <p>Current Item : {{currentItem}}</p>
+
+        <p>Standard barcket experssion</p>
+        <p>{{randomValue}}</p>
+
+        <p>One time barcket experssion</p>
+        <p>{{::randomValue}}</p>
+
+        <p>Array Barcket Expression</p>
+        <p>{{names[1]}}</p>
+
+        <p>Operation barcket expression</p>
+        <p>{{qty*cost}}</p>
+
+        <p>Evaluation Expression: greater than 500000?</p>
+        <p>{{randomValue>500000}}</p>
+
+        <p>Enter width: <input type="text" ng-model="pWidth" /></p>
+        <p style="background-color:red;width:{{pWidth}}px">This is a dynamic paragraph</p>
+    </div>   
+
+    <div ng-controller="parentController">
+        <input type="text" ng-model="model.name" />
+        <p>parent:{{model.name}}</p>
+        <div ng-controller="childController">
+            <input type="text" ng-model="model.name" />
+            <p>child:{{model.name}}</p>
+        </div>
+    </div>
+   
+    <div ng-controller="parentController">
+        <input type="text" ng-model="model.name" />
+        <p>second parent:{{model.name}}</p>
+    </div>
+
+    <div ng-controller="childController">
+        <input type="text" ng-model="model.name" />
+        <p>second child:{{model.name}}</p>
+    </div>
+</body>
+
+</html>
